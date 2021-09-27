@@ -21,18 +21,6 @@ export default function UserNavigation() {
   const handlePushHomePage = () => {
     history.push("/home-page");
   };
-  const handlePushSubscribe = () => {
-    history.push("/subscribe");
-  };
-  const handlePushProfile = () => {
-    history.push("/profile");
-  };
-  const handlePushAddBook = () => {
-    history.push("/add-book");
-  };
-  const handlePushListTransaction = () => {
-    history.push("/list-transaction");
-  };
 
   let checkSubs = <p className={Styles.textSubs}>Not Subscribed Yet</p>;
   if (state.subs) {
