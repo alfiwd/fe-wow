@@ -1,54 +1,48 @@
 // Library
 import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // Assets and Stylesheets
 import Logo from "../../assets/icon/icon.png";
 import UserPhoto from "../../assets/img/user-photo.png";
-import ProfileIcon from "../../assets/icon/profile-icon.png";
-import SubsIcon from "../../assets/icon/subs-icon.png";
 import LogoutIcon from "../../assets/icon/logout-icon.png";
+import AddBookIcon from "../../assets/icon/add-book-icon.svg";
+import SubsIcon from "../../assets/icon/subs-icon.png";
 import Styles from "../../stylesheets/HomePage.module.css";
 
 // Components
-import { UserContext } from "../../context/userContext";
 import ModalLogout from "../modal/ModalLogout";
+import { UserContext } from "../../context/userContext";
 
-export default function UserNavigation() {
+export default function AdminNavigation() {
   const [state] = useContext(UserContext);
   const [modalLogout, setModalLogout] = useState(false);
 
   const history = useHistory();
-  const handlePushHomePage = () => {
-    history.push("/home-page");
+  const handlePushHomePageAdmin = () => {
+    history.push("/home-page-admin");
   };
-
-  let checkSubs = <p className={Styles.textSubs}>Not Subscribed Yet</p>;
-  if (state.subs) {
-    checkSubs = <p className={Styles.textSubsDone}>Subscribed</p>;
-  }
 
   return (
     <>
       <div className="d-flex flex-column align-items-center">
-        <img src={Logo} alt="..." className={Styles.logo} style={{ cursor: "pointer" }} onClick={handlePushHomePage} />
+        <img src={Logo} alt="..." className={Styles.logo} style={{ cursor: "pointer" }} onClick={handlePushHomePageAdmin} />
         <img src={UserPhoto} alt="..." className={Styles.userPhoto} />
-        <p className={Styles.name}>{state.user.fullName}</p>
-        {checkSubs}
+        <p className={Styles.name}>{state.admin.status}</p>
       </div>
       <hr className={Styles.hr} />
       <div className={Styles.listMenu}>
         <div className="d-flex my-5">
-          <img src={ProfileIcon} alt="" className={Styles.icon} />
-          <NavLink to="/profile" style={{ color: "#929292", textDecoration: "none" }} activeStyle={{ color: "#D60000", textDecoration: "none" }}>
-            Profile
+          <img src={AddBookIcon} alt="" className={Styles.icon} />
+          <NavLink to="/add-book" style={{ color: "#929292", textDecoration: "none" }} activeStyle={{ color: "#D60000", textDecoration: "none" }}>
+            Add Book
           </NavLink>
         </div>
         <div className="d-flex my-5">
           <img src={SubsIcon} alt="" className={Styles.icon} />
-          <NavLink to="/subscribe" style={{ color: "#929292", textDecoration: "none" }} activeStyle={{ color: "#D60000", textDecoration: "none" }}>
-            Subscribe
+          <NavLink to="/list-transaction" style={{ color: "#929292", textDecoration: "none" }} activeStyle={{ color: "#D60000", textDecoration: "none" }}>
+            List Transaction
           </NavLink>
         </div>
         <hr />

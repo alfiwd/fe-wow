@@ -1,17 +1,22 @@
+// Library
 import React, { useContext, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { useHistory } from "react-router";
+
+// Assets
 import EmailIcon from "../assets/icon/email-icon.png";
 import GenderIcon from "../assets/icon/gender-icon.png";
 import PhoneIcon from "../assets/icon/phone-icon.png";
 import LocationIcon from "../assets/icon/location-icon.png";
 import UserPhotoLarge from "../assets/img/user-photo-large.png";
-import { useHistory } from "react-router";
 
 // Components
 import UserNavigation from "../components/navigation/UserNavigation";
-import { UserContext } from "../context/userContext";
 import ModalComingSoon from "../components/modal/ModalComingSoon";
 import LoadingAnimation from "../components/loading/LoadingAnimation";
+
+// UseContext
+import { UserContext } from "../context/userContext";
 
 export default function Profile() {
   const [state] = useContext(UserContext);

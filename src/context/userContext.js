@@ -5,6 +5,9 @@ export const UserContext = createContext();
 const initialState = {
   isLogin: false,
   user: {},
+  admin: {
+    status: "Admin",
+  },
   subs: false,
   book: {},
 };
@@ -16,12 +19,22 @@ const reducer = (state, action) => {
       return {
         isLogin: false,
         user: payload,
+        admin: state.admin,
         subs: false,
         book: state.book,
       };
     case "LOGIN_SUCCESS":
       return {
         isLogin: true,
+        user: state.user,
+        admin: state.admin,
+        subs: state.subs,
+        book: state.book,
+      };
+    case "LOGIN_SUCCESS_ADMIN":
+      return {
+        isLogin: true,
+        admin: state.admin,
         user: state.user,
         subs: state.subs,
         book: state.book,
@@ -30,6 +43,7 @@ const reducer = (state, action) => {
       return {
         isLogin: false,
         user: state.user,
+        admin: state.admin,
         subs: state.subs,
         book: state.book,
       };
@@ -37,6 +51,7 @@ const reducer = (state, action) => {
       return {
         isLogin: true,
         user: state.user,
+        admin: state.admin,
         subs: true,
         book: state.book,
       };
@@ -44,6 +59,7 @@ const reducer = (state, action) => {
       return {
         isLogin: state.isLogin,
         user: state.user,
+        admin: state.admin,
         subs: state.subs,
         book: payload,
       };

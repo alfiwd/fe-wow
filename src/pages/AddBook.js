@@ -1,11 +1,14 @@
+// React
 import React, { useState } from "react";
 import { Container, Form } from "react-bootstrap";
+
+// Assets
 import AddBookIcon from "../assets/icon/add-book-icon.png";
 import AttacheBookIcon from "../assets/icon/attache-book-icon.png";
 import ListTransaction from "../assets/icon/subs-icon.png";
 
 // Components
-import IconWowOnly from "../components/IconWowOnly";
+import IconWowOnlyAdmin from "../components/IconWowOnlyAdmin";
 import DropdownUserIcon from "../components/dropdown/DropdownUserIcon";
 import ModalAddBookSuccess from "../components/modal/ModalAddBookSuccess";
 import LoadingAnimation from "../components/loading/LoadingAnimation";
@@ -33,7 +36,7 @@ export default function AddBook() {
         <>
           <Container fluid style={{ backgroundColor: "#E5E5E5", paddingTop: "30px", height: "100vh" }}>
             <div className="d-flex justify-content-between">
-              <IconWowOnly />
+              <IconWowOnlyAdmin />
               <DropdownUserIcon link={"/list-transaction"} text={"List Transaction"} img={ListTransaction} />
             </div>
             <div className="mx-auto" style={{ marginTop: "50px", width: "60%" }}>
@@ -43,7 +46,7 @@ export default function AddBook() {
                   <Form.Control type="text" placeholder="Title" style={{ backgroundColor: "#D2D2D2" }} required />
                 </Form.Group>
                 <Form.Group className="mb-4" controlId="formBasicEmail">
-                  <Form.Control type="text" placeholder="Publication Date" style={{ backgroundColor: "#D2D2D2" }} required />
+                  <Form.Control type="date" placeholder="Publication Date" style={{ backgroundColor: "#D2D2D2" }} required />
                 </Form.Group>
                 <Form.Group className="mb-4" controlId="formBasicEmail">
                   <Form.Control type="text" placeholder="Pages" style={{ backgroundColor: "#D2D2D2" }} required />

@@ -1,8 +1,10 @@
+// Library
 import React, { useState } from "react";
-import { Container, Carousel, Row, Col } from "react-bootstrap";
-import Logo from "../assets/icon/icon.png";
-import ReadBookImg from "../assets/img/read-book.png";
+import { Container, Carousel } from "react-bootstrap";
 import { useHistory } from "react-router";
+
+// Assets
+import ReadBookImg from "../assets/img/read-book.png";
 
 // Components
 import IconWowOnly from "../components/IconWowOnly";

@@ -1,4 +1,5 @@
-import React, { useEffect, useContext } from "react";
+// Library
+import React, { useContext } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useHistory } from "react-router";
 

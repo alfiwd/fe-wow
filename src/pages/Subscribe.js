@@ -1,5 +1,8 @@
+// Library
 import React, { useState, useContext } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+
+// Assets
 import IconSmall from "../assets/icon/icon-small.png";
 import UploadIcon from "../assets/icon/upload-icon.png";
 

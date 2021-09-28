@@ -1,5 +1,6 @@
+// Library
 import React from "react";
-import { Button, Modal, Form } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 export default function ModalEmailPasswordWrong(props) {
   return (

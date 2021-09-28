@@ -1,10 +1,12 @@
-import React, { Component } from "react";
+// Library
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Pages
 import NotFound from "./pages/NotFound";
 import LandingPage from "./pages/LandingPage";
 import HomePage from "./pages/HomePage";
+import HomePageAdmin from "./pages/HomePageAdmin";
 import DetailBook from "./pages/DetailBook";
 import ReadBook from "./pages/ReadBook";
 import Subscribe from "./pages/Subscribe";
@@ -15,6 +17,8 @@ import ViewBookAdded from "./pages/ViewBookAdded";
 
 // Components
 import PrivateRoute from "./components/PrivateRoute";
+
+// UserContext
 import { UserContextProvider } from "./context/userContext";
 
 function App() {
@@ -31,6 +35,7 @@ function App() {
           <PrivateRoute exact path="/profile" component={Profile} />
           <PrivateRoute exact path="/list-transaction" component={ListTransaction} />
           <PrivateRoute exact path="/add-book" component={AddBook} />
+          <PrivateRoute exact path="/home-page-admin" component={HomePageAdmin} />
           <Route exact path="*" component={NotFound} />
         </Switch>
       </Router>

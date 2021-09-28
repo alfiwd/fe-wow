@@ -1,6 +1,9 @@
+// Library
 import React, { useState } from "react";
 import { Container, Button } from "react-bootstrap";
 import { useHistory } from "react-router";
+
+// Assets
 import PageNotFound from "../assets/img/page-not-found.svg";
 
 // Components

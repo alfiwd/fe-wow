@@ -1,5 +1,8 @@
+// Library
 import React, { useState } from "react";
 import { Dropdown } from "react-bootstrap";
+
+// Assets
 import UserIconImg from "../../assets/icon/user-icon.png";
 import LogoutIcon from "../../assets/icon/logout-icon.svg";
 import { useHistory } from "react-router";

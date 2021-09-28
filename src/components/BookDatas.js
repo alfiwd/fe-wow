@@ -1,3 +1,4 @@
+// Assets
 import Serangkai from "../assets/img/serangkai.png";
 import BukuSiswaTematik from "../assets/img/buku-siswa-tematik.png";
 import KabarRahasiaDariAlamKubur from "../assets/img/kabar-rahasia-dari-alam-kubur.png";

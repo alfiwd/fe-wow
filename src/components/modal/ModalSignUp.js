@@ -1,4 +1,5 @@
-import React, { useEffect, useContext, useState } from "react";
+// Library
+import React, { useContext, useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 
 // Components

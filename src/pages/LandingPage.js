@@ -1,9 +1,12 @@
-import React, { useContext, useState, useEffect } from "react";
+// Library
+import React, { useContext, useState } from "react";
+import { Container, Row, Col, Button, Modal, Form } from "react-bootstrap";
+import { useHistory } from "react-router";
+
+// Assets and Stylesheets
 import Logo from "../assets/icon/icon-large.png";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Button, Modal, Form } from "react-bootstrap";
 import Styles from "../stylesheets/LandingPage.module.css";
-import { useHistory } from "react-router";
 
 // Components
 import ModalSignUpSuccess from "../components/modal/ModalSignUpSuccess";
@@ -31,19 +34,26 @@ export default function LandingPage() {
 
   // useContext
   const [state, dispatch] = useContext(UserContext);
+  console.log("Landing Page");
+  console.log(state);
 
   // All Function
   const handleOnSubmitSignIn = (e) => {
     e.preventDefault();
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
     if (!state.user.email) {
       showModalNotSignUp();
       closeModalSignIn();
     }
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
     if (state.user.email) {
-      if (email === state.user.email && password === state.user.password) {
+      if (email == state.user.email && password == state.user.password) {
         handlePushHomePage();
+        dispatch({
+          type: "LOGIN_SUCCESS",
+        });
+      } else if (email == "admin@gmail.com" && password == "admin") {
+        handlePushHomePageAdmin();
         dispatch({
           type: "LOGIN_SUCCESS",
         });
@@ -75,6 +85,9 @@ export default function LandingPage() {
   const history = useHistory();
   const handlePushHomePage = () => {
     history.push("/home-page");
+  };
+  const handlePushHomePageAdmin = () => {
+    history.push("/home-page-admin");
   };
 
   return (

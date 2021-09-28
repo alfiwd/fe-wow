@@ -1,9 +1,12 @@
+// Library
 import React, { useState } from "react";
 import { Container, Table } from "react-bootstrap";
+
+// Assets
 import AddBookIcon from "../assets/icon/add-book-icon.svg";
 
 // Components
-import IconWowOnly from "../components/IconWowOnly";
+import IconWowOnlyAdmin from "../components/IconWowOnlyAdmin";
 import DropdownUserIcon from "../components/dropdown/DropdownUserIcon";
 import DropdownStatus from "../components/dropdown/DropdownStatus";
 import transactionDatas from "../components/TransactionDatas";
@@ -19,7 +22,7 @@ export default function ListTransaction() {
       {loading ? (
         <Container fluid style={{ backgroundColor: "#E5E5E5", paddingTop: "30px", height: "100vh" }}>
           <div className="d-flex justify-content-between">
-            <IconWowOnly />
+            <IconWowOnlyAdmin />
             <DropdownUserIcon link={"/add-book"} text={"Add Book"} img={AddBookIcon} />
           </div>
           <div className="mx-auto w-75" style={{ marginTop: "95px" }}>
